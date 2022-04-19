@@ -1,32 +1,45 @@
-import { Route, Routes } from "react-router-dom";
-import "./App.css";
-import Login from "./components/Auth/Login/Login";
-import RequireAuth from "./components/Auth/RequireAuth/RequireAuth";
-import Signup from "./components/Auth/Signup/Signup";
-import Generator from "./components/Generator/Generator";
-import Home from "./components/Home/Home";
-import Nav from "./components/Nav/Nav";
+import { Route, Routes } from 'react-router-dom';
+import './App.css';
+import About from './Pages/About/About';
+import Checkout from './Pages/Checkout/Checkout/Checkout';
+import Home from './Pages/Home/Home/Home';
+import Map from './Pages/Home/Map/Map';
+import Login from './Pages/Login/Login/Login';
+import Register from './Pages/Login/Register/Register';
+import RequireAuth from './Pages/Login/RequireAuth/RequireAuth';
+import ServiceDetail from './Pages/ServiceDetail/ServiceDetail';
+import Footer from './Pages/Shared/Footer/Footer';
+import Header from './Pages/Shared/Header/Header';
+import NotFound from './Pages/Shared/NotFound/NotFound';
 
 function App() {
-    return (
-        <div>
-            <Nav />
-            <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/home" element={<Home />} />
-                <Route
-                    path="/generator"
-                    element={
-                        <RequireAuth>
-                            <Generator />
-                        </RequireAuth>
-                    }
-                />
-                <Route path="/login" element={<Login />} />
-                <Route path="/signup" element={<Signup />} />
-            </Routes>
-        </div>
-    );
+  return (
+    <div>
+      <Header></Header>
+        <Routes>
+          <Route path="/" element={<Home></Home>}></Route>
+          <Route path="/home" element={<Home></Home>}></Route>
+          <Route
+            path="/service/:serviceId"
+            element={<ServiceDetail></ServiceDetail>}
+          ></Route>
+            <Route path="/map" element={<Map/>}></Route>
+            <Route path="/about" element={<About></About>}></Route>
+          <Route path="/login" element={<Login></Login>}></Route>
+          <Route path="/register" element={<Register></Register>}></Route>
+          <Route
+            path="/checkout"
+            element={
+              <RequireAuth>
+                <Checkout></Checkout>
+              </RequireAuth>
+            }
+          ></Route>
+          <Route path="*" element={<NotFound></NotFound>}></Route>
+        </Routes>
+      <Footer></Footer>
+    </div>
+  );
 }
 
 export default App;

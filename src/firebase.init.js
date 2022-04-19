@@ -1,17 +1,22 @@
+// Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
 
+// Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyCjeNQd-FOlL8TCxEMhg1o2Z_lmUBjn1lo",
-  authDomain: "react-color-generator-firebase.firebaseapp.com",
-  projectId: "react-color-generator-firebase",
-  storageBucket: "react-color-generator-firebase.appspot.com",
-  messagingSenderId: "522916022192",
-  appId: "1:522916022192:web:348db9a42fc69e73b1b875",
+  apiKey: "AIzaSyCObZzD2A_G919_nqbHqgUyxXjZAFDMbFQ",
+  authDomain: "react-genius-car-service.firebaseapp.com",
+  projectId: "react-genius-car-service",
+  storageBucket: "react-genius-car-service.appspot.com",
+  messagingSenderId: "899590749133",
+  appId: "1:899590749133:web:403d0cff55ee6730d22284",
 };
 
+// Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
-export const auth = getAuth(app);
+const auth = getAuth(app);
 
-export default app;
+export default auth;
